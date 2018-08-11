@@ -11,6 +11,8 @@ class HomeApp extends StatelessWidget {
       title: "Basic Widget",
       home: Scaffold(
         appBar: AppBar(
+          title: Text("App Bar"),
+          leading: Icon(Icons.group),
           actions: <Widget>[Icon(Icons.home)],
         ),
         body: Center(
