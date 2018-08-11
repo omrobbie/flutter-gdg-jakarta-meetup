@@ -12,6 +12,9 @@ class LayoutApp extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: <Widget>[
+          Padding(
+            padding: EdgeInsets.all(32.0),
+          ),
           Text("Hello World!"),
           Text("We study Flutter"),
         ],
