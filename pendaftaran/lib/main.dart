@@ -24,15 +24,20 @@ class _MyAppState extends State<MyApp> {
           children: <Widget>[
             TextField(
               keyboardType: TextInputType.emailAddress,
+              decoration: InputDecoration(hintText: "Email Address"),
             ),
             TextField(
               keyboardType: TextInputType.text,
+              decoration: InputDecoration(hintText: "Full Name"),
             ),
             TextField(
               keyboardType: TextInputType.phone,
+              decoration: InputDecoration(hintText: "Phone Number"),
             ),
             TextField(
               keyboardType: TextInputType.text,
+              decoration: InputDecoration(labelText: "Password"),
+              obscureText: true,
             ),
             RaisedButton(
               onPressed: null,
