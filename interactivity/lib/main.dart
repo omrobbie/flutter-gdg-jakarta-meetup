@@ -14,6 +14,12 @@ class ScoreApp extends StatefulWidget {
 class _ScoreAppState extends State<ScoreApp> {
   int counter = 0;
 
+  void tambahSatu() {
+    setState(() {
+      counter++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,9 +32,7 @@ class _ScoreAppState extends State<ScoreApp> {
             Text("$counter"),
             RaisedButton(
               onPressed: () {
-                setState(() {
-                  counter++;
-                });
+                tambahSatu();
               },
               child: Text("Tambah 1"),
             ),
