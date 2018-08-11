@@ -27,6 +27,13 @@ class _ScoreAppState extends State<ScoreApp> {
     });
   }
 
+  void resetCounter() {
+    setState(() {
+      counterA = 0;
+      counterB = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,54 +41,108 @@ class _ScoreAppState extends State<ScoreApp> {
         title: Text("Score App"),
       ),
       body: Container(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        child: Column(
           children: <Widget>[
-            Column(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                Text("$counterA"),
-                RaisedButton(
-                  onPressed: () {
-                    tambahA(3);
-                  },
-                  child: Text("+3 POINTS"),
+                Container(
+                  height: 300.0,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Text(
+                        "$counterA",
+                        style: TextStyle(fontSize: 24.0),
+                      ),
+                      RaisedButton(
+                        onPressed: () {
+                          tambahA(3);
+                        },
+                        child: Text(
+                          "+3 POINTS",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        color: Colors.lightBlue,
+                      ),
+                      RaisedButton(
+                        onPressed: () {
+                          tambahA(2);
+                        },
+                        child: Text(
+                          "+2 POINTS",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        color: Colors.lightBlue,
+                      ),
+                      RaisedButton(
+                        onPressed: () {
+                          tambahA(1);
+                        },
+                        child: Text(
+                          "FREE THROW",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        color: Colors.lightBlue,
+                      ),
+                    ],
+                  ),
                 ),
-                RaisedButton(
-                  onPressed: () {
-                    tambahA(2);
-                  },
-                  child: Text("2+ POINTS"),
-                ),
-                RaisedButton(
-                  onPressed: () {
-                    tambahA(1);
-                  },
-                  child: Text("FREE THROW"),
+                Container(
+                  height: 300.0,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Text(
+                        "$counterB",
+                        style: TextStyle(fontSize: 24.0),
+                      ),
+                      RaisedButton(
+                        onPressed: () {
+                          tambahB(3);
+                        },
+                        child: Text(
+                          "+3 POINTS",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        color: Colors.lightBlue,
+                      ),
+                      RaisedButton(
+                        onPressed: () {
+                          tambahB(2);
+                        },
+                        child: Text(
+                          "+2 POINTS",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        color: Colors.lightBlue,
+                      ),
+                      RaisedButton(
+                        onPressed: () {
+                          tambahB(1);
+                        },
+                        child: Text(
+                          "FREE THROW",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        color: Colors.lightBlue,
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
-            Column(
-              children: <Widget>[
-                Text("$counterB"),
-                RaisedButton(
-                  onPressed: () {
-                    tambahB(3);
-                  },
-                  child: Text("+3 POINTS"),
+            Center(
+              child: RaisedButton(
+                onPressed: () {
+                  resetCounter();
+                },
+                child: Text(
+                  "RESET",
+                  style: TextStyle(color: Colors.white),
                 ),
-                RaisedButton(
-                  onPressed: () {
-                    tambahB(2);
-                  },
-                  child: Text("2+ POINTS"),
-                ),
-                RaisedButton(
-                  onPressed: () {
-                    tambahB(1);
-                  },
-                  child: Text("FREE THROW"),
-                ),
-              ],
+                color: Colors.lightBlue,
+              ),
             ),
           ],
         ),
