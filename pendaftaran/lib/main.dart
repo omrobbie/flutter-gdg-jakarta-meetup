@@ -24,6 +24,7 @@ class _MyAppState extends State<MyApp> {
         child: Container(
           padding: EdgeInsets.all(16.0),
           child: Form(
+            key: _formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
@@ -34,6 +35,11 @@ class _MyAppState extends State<MyApp> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20.0)),
                   ),
+                  validator: (a) {
+                    if (a.isEmpty) {
+                      return "Please fill your email address";
+                    }
+                  },
                 ),
                 Padding(padding: EdgeInsets.all(10.0)),
                 TextFormField(
@@ -43,6 +49,11 @@ class _MyAppState extends State<MyApp> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20.0)),
                   ),
+                  validator: (a) {
+                    if (a.isEmpty) {
+                      return "Please fill your full name";
+                    }
+                  },
                 ),
                 Padding(padding: EdgeInsets.all(10.0)),
                 TextFormField(
@@ -52,6 +63,11 @@ class _MyAppState extends State<MyApp> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20.0)),
                   ),
+                  validator: (a) {
+                    if (a.isEmpty) {
+                      return "Please fill your phone number";
+                    }
+                  },
                 ),
                 Padding(padding: EdgeInsets.all(10.0)),
                 TextFormField(
@@ -61,6 +77,11 @@ class _MyAppState extends State<MyApp> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20.0)),
                   ),
+                  validator: (a) {
+                    if (a.isEmpty) {
+                      return "Please fill your password";
+                    }
+                  },
                   obscureText: true,
                 ),
                 Padding(padding: EdgeInsets.all(10.0)),
