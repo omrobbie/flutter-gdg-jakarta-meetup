@@ -21,6 +21,7 @@ class _MyAppState extends State<MyApp> {
       body: Container(
         padding: EdgeInsets.all(16.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             TextField(
               keyboardType: TextInputType.emailAddress,
@@ -39,6 +40,7 @@ class _MyAppState extends State<MyApp> {
               decoration: InputDecoration(labelText: "Password"),
               obscureText: true,
             ),
+            Padding(padding: EdgeInsets.all(10.0)),
             RaisedButton(
               onPressed: null,
               child: Text("Submit"),
