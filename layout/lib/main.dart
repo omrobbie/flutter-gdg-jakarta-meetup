@@ -34,9 +34,33 @@ class LayoutApp extends StatelessWidget {
           ),
           Row(
             children: <Widget>[
-              Expanded(flex: 2, child: Image.asset("img/rufi.png")),
-              Expanded(flex: 2, child: Image.asset("img/one-piece.jpg")),
-              Expanded(flex: 2, child: Image.asset("img/tony.jpg")),
+              Expanded(
+                flex: 2,
+                child: Image.asset(
+                  "img/rufi.png",
+                  fit: BoxFit.cover,
+                  width: 200.0,
+                  height: 200.0,
+                ),
+              ),
+              Expanded(
+                flex: 2,
+                child: Image.asset(
+                  "img/one-piece.jpg",
+                  fit: BoxFit.cover,
+                  width: 200.0,
+                  height: 200.0,
+                ),
+              ),
+              Expanded(
+                flex: 2,
+                child: Image.asset(
+                  "img/tony.jpg",
+                  fit: BoxFit.cover,
+                  width: 200.0,
+                  height: 200.0,
+                ),
+              ),
             ],
           ),
         ],
