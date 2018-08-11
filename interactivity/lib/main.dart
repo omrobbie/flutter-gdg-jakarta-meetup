@@ -14,9 +14,9 @@ class ScoreApp extends StatefulWidget {
 class _ScoreAppState extends State<ScoreApp> {
   int counter = 0;
 
-  void tambahSatu() {
+  void tambah(int value) {
     setState(() {
-      counter++;
+      counter += value;
     });
   }
 
@@ -32,9 +32,21 @@ class _ScoreAppState extends State<ScoreApp> {
             Text("$counter"),
             RaisedButton(
               onPressed: () {
-                tambahSatu();
+                tambah(1);
               },
               child: Text("Tambah 1"),
+            ),
+            RaisedButton(
+              onPressed: () {
+                tambah(2);
+              },
+              child: Text("Tambah 2"),
+            ),
+            RaisedButton(
+              onPressed: () {
+                tambah(3);
+              },
+              child: Text("Tambah 3"),
             ),
           ],
         ),
