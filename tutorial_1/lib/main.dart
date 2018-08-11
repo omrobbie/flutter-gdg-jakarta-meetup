@@ -27,8 +27,10 @@ class HomeApp extends StatelessWidget {
           //   color: Color.fromARGB(255, 66, 165, 245),
           // ),
 
-          child: Image.network(
-              "http://teknoevent.com/wp-content/uploads/2018/05/Jetpack_logo.png"),
+          // child: Image.network(
+          //     "http://teknoevent.com/wp-content/uploads/2018/05/Jetpack_logo.png"),
+
+          child: Image.asset("img/android-vs-ios.png"),
         ),
       ),
     );
