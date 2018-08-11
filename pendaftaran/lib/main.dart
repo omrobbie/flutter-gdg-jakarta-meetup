@@ -18,34 +18,55 @@ class _MyAppState extends State<MyApp> {
       appBar: AppBar(
         title: Text("Form Registration"),
       ),
-      body: Container(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            TextField(
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(hintText: "Email Address"),
-            ),
-            TextField(
-              keyboardType: TextInputType.text,
-              decoration: InputDecoration(hintText: "Full Name"),
-            ),
-            TextField(
-              keyboardType: TextInputType.phone,
-              decoration: InputDecoration(hintText: "Phone Number"),
-            ),
-            TextField(
-              keyboardType: TextInputType.text,
-              decoration: InputDecoration(labelText: "Password"),
-              obscureText: true,
-            ),
-            Padding(padding: EdgeInsets.all(10.0)),
-            RaisedButton(
-              onPressed: null,
-              child: Text("Submit"),
-            ),
-          ],
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              TextField(
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(
+                  hintText: "Email Address",
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20.0)),
+                ),
+              ),
+              Padding(padding: EdgeInsets.all(10.0)),
+              TextField(
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                  hintText: "Full Name",
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20.0)),
+                ),
+              ),
+              Padding(padding: EdgeInsets.all(10.0)),
+              TextField(
+                keyboardType: TextInputType.phone,
+                decoration: InputDecoration(
+                  hintText: "Phone Number",
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20.0)),
+                ),
+              ),
+              Padding(padding: EdgeInsets.all(10.0)),
+              TextField(
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                  labelText: "Password",
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20.0)),
+                ),
+                obscureText: true,
+              ),
+              Padding(padding: EdgeInsets.all(10.0)),
+              RaisedButton(
+                onPressed: null,
+                child: Text("Submit"),
+              ),
+            ],
+          ),
         ),
       ),
     );
