@@ -4,6 +4,9 @@ import 'finish.dart';
 void main() {
   runApp(MaterialApp(
     home: MyApp(),
+    routes: <String, WidgetBuilder>{
+      '/Finish': (BuildContext context) => new FinishBaru()
+    },
   ));
 }
 
@@ -89,8 +92,10 @@ class _MyAppState extends State<MyApp> {
                 RaisedButton(
                   onPressed: () {
                     if (_formKey.currentState.validate()) {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (BuildContext context) => new FinishApp()));
+                      // Navigator.of(context).push(MaterialPageRoute(
+                      //     builder: (BuildContext context) => new FinishApp()));
+
+                      Navigator.pushNamed(context, '/Finish');
                     }
                   },
                   child: Text("Submit"),
@@ -99,6 +104,20 @@ class _MyAppState extends State<MyApp> {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class FinishBaru extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Finish Baru!"),
+      ),
+      body: Center(
+        child: Text("Thank you!"),
       ),
     );
   }
