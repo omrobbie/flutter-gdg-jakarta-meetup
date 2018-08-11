@@ -39,6 +39,11 @@ class HomeApp extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: null,
+          backgroundColor: Colors.blue,
+          child: Icon(Icons.add),
+        ),
       ),
     );
   }
