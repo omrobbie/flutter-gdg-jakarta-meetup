@@ -12,11 +12,12 @@ class LayoutApp extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: <Widget>[
-          Padding(
-            padding: EdgeInsets.all(32.0),
+          Image.network(
+              "https://i1.wp.com/kabar.kibar.co.id/wp-content/uploads/2018/02/ae812da3f28ba5ad03c2da1a7fc7c724.jpg"),
+          Container(
+            padding: EdgeInsets.only(top: 10.0),
+            child: Text("Flutter Study Jam - Session 1"),
           ),
-          Text("Hello World!"),
-          Text("We study Flutter"),
         ],
       ),
     );
