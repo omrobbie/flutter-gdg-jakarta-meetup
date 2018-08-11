@@ -11,9 +11,7 @@ class HomeApp extends StatelessWidget {
       title: "Basic Widget",
       home: Scaffold(
         appBar: AppBar(
-          actions: <Widget>[
-            Icon(Icons.home),
-          ],
+          actions: <Widget>[Icon(Icons.home)],
         ),
         body: Center(
           //     child: Text(
@@ -23,11 +21,14 @@ class HomeApp extends StatelessWidget {
           //       fontSize: 24.0,
           //       fontWeight: FontWeight.bold),
 
-          child: Icon(
-            Icons.android,
-            size: 70.0,
-            color: Color.fromARGB(255, 66, 165, 245),
-          ),
+          // child: Icon(
+          //   Icons.android,
+          //   size: 70.0,
+          //   color: Color.fromARGB(255, 66, 165, 245),
+          // ),
+
+          child: Image.network(
+              "http://teknoevent.com/wp-content/uploads/2018/05/Jetpack_logo.png"),
         ),
       ),
     );
