@@ -19,7 +19,6 @@ class LayoutApp extends StatelessWidget {
             child: Text(
               "Flutter Study Jam - Session 1",
               style: TextStyle(fontSize: 20.0),
-              textAlign: TextAlign.left,
             ),
           ),
           Container(
@@ -32,6 +31,13 @@ class LayoutApp extends StatelessWidget {
                 Icon(Icons.settings, size: 40.0),
               ],
             ),
+          ),
+          Row(
+            children: <Widget>[
+              Expanded(flex: 2, child: Image.asset("img/rufi.png")),
+              Expanded(flex: 2, child: Image.asset("img/one-piece.jpg")),
+              Expanded(flex: 2, child: Image.asset("img/tony.jpg")),
+            ],
           ),
         ],
       ),
