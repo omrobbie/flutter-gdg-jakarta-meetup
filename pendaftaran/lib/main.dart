@@ -12,6 +12,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,51 +23,53 @@ class _MyAppState extends State<MyApp> {
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              TextField(
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  hintText: "Email Address",
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20.0)),
+          child: Form(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                TextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: InputDecoration(
+                    hintText: "Email Address",
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20.0)),
+                  ),
                 ),
-              ),
-              Padding(padding: EdgeInsets.all(10.0)),
-              TextField(
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  hintText: "Full Name",
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20.0)),
+                Padding(padding: EdgeInsets.all(10.0)),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  decoration: InputDecoration(
+                    hintText: "Full Name",
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20.0)),
+                  ),
                 ),
-              ),
-              Padding(padding: EdgeInsets.all(10.0)),
-              TextField(
-                keyboardType: TextInputType.phone,
-                decoration: InputDecoration(
-                  hintText: "Phone Number",
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20.0)),
+                Padding(padding: EdgeInsets.all(10.0)),
+                TextFormField(
+                  keyboardType: TextInputType.phone,
+                  decoration: InputDecoration(
+                    hintText: "Phone Number",
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20.0)),
+                  ),
                 ),
-              ),
-              Padding(padding: EdgeInsets.all(10.0)),
-              TextField(
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  labelText: "Password",
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20.0)),
+                Padding(padding: EdgeInsets.all(10.0)),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  decoration: InputDecoration(
+                    labelText: "Password",
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20.0)),
+                  ),
+                  obscureText: true,
                 ),
-                obscureText: true,
-              ),
-              Padding(padding: EdgeInsets.all(10.0)),
-              RaisedButton(
-                onPressed: null,
-                child: Text("Submit"),
-              ),
-            ],
+                Padding(padding: EdgeInsets.all(10.0)),
+                RaisedButton(
+                  onPressed: null,
+                  child: Text("Submit"),
+                ),
+              ],
+            ),
           ),
         ),
       ),
