@@ -1,6 +1,10 @@
 # Basic Flutter
 Acara GDG (Google Developer Group) di Jakarta dengan materi Flutter.
 
+## Preview
+<img src="https://github.com/omrobbie/flutter-gdg-jakarta-meetup/blob/master/_screenshot/preview1.png" width="256"/> &nbsp;
+<img src="https://github.com/omrobbie/flutter-gdg-jakarta-meetup/blob/master/_screenshot/preview2.png" width="256"/> &nbsp;
+
 ## Details
 
 Only register in this form: http://bit.ly/flutter-jkt
