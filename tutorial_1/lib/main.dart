@@ -30,7 +30,12 @@ class HomeApp extends StatelessWidget {
           // child: Image.network(
           //     "http://teknoevent.com/wp-content/uploads/2018/05/Jetpack_logo.png"),
 
-          child: Image.asset("img/android-vs-ios.png"),
+          child: Image.asset(
+            "img/android-vs-ios.png",
+            width: 300.0,
+            height: 200.0,
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );
