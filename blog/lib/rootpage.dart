@@ -100,13 +100,15 @@ class _RegistrasiState extends State<Registrasi> {
   }
 
   void validateAndSubmit() async {
-    try {
-      FirebaseUser user = await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(email: email, password: password);
+    if (validateSave()) {
+      try {
+        FirebaseUser user = await FirebaseAuth.instance
+            .createUserWithEmailAndPassword(email: email, password: password);
 
-      print("Respon user: ${user.uid}");
-    } catch (e) {
-      print("error: $e");
+        print("Respon user: ${user.uid}");
+      } catch (e) {
+        print("error: $e");
+      }
     }
   }
 
