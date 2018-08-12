@@ -32,6 +32,7 @@ class _RootPageState extends State<RootPage> {
             ),
             CustomButton(
               sText: "Sign In",
+              callback: () {},
             ),
           ],
         ),
