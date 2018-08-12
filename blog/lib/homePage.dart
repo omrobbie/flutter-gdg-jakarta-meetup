@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'auth.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -6,7 +7,20 @@ void main() {
   ));
 }
 
-class MyHome extends StatelessWidget {
+class MyHome extends StatefulWidget {
+  final BaseAuth auth;
+  final VoidCallback callback;
+
+  MyHome({
+    this.auth,
+    this.callback,
+  });
+
+  @override
+  _MyHomeState createState() => new _MyHomeState();
+}
+
+class _MyHomeState extends State<MyHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
