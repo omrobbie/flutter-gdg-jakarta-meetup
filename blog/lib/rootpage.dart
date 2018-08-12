@@ -68,3 +68,27 @@ class _RootPageState extends State<RootPage> {
     );
   }
 }
+
+class _RegistrasiState extends StatefulWidget {
+  @override
+  __RegistrasiStateState createState() => new __RegistrasiStateState();
+}
+
+class __RegistrasiStateState extends State<_RegistrasiState> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Form Registration"),
+      ),
+      body: Container(
+        padding: EdgeInsets.all(16.0),
+        child: Form(
+          child: Column(
+            children: <Widget>[],
+          ),
+        ),
+      ),
+    );
+  }
+}
