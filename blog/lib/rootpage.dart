@@ -26,8 +26,8 @@ class _RootPageState extends State<RootPage> {
   void validateAndSubmit() async {
     if (validateSave()) {
       try {
-        FirebaseUser user = await FirebaseAuth.instance
-            .signInWithEmailAndPassword(email: email, password: password);
+        // FirebaseUser user = await FirebaseAuth.instance
+        //     .signInWithEmailAndPassword(email: email, password: password);
 
         print("Respon user: ${user.uid}");
       } catch (e) {
