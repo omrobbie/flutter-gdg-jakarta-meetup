@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'customView.dart';
 import 'auth.dart';
+import 'homePage.dart';
 
 class RootPage extends StatefulWidget {
   final BaseAuth auth;
@@ -38,6 +39,9 @@ class _RootPageState extends State<RootPage> {
 
         String userId =
             await widget.auth.signInWithEmailAndPassword(email, password);
+
+        Navigator.of(context).pushReplacement(new MaterialPageRoute(
+            builder: (BuildContext context) => new MyHome()));
 
         print("Respon user: $userId");
       } catch (e) {
