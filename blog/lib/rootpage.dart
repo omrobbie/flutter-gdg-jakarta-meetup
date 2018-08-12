@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'customView.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class RootPage extends StatefulWidget {
   @override
@@ -18,6 +19,17 @@ class _RootPageState extends State<RootPage> {
     }
 
     print("Email Address: $email, Password: $password");
+  }
+
+  void validateAndSubmit() async {
+    try {
+      FirebaseUser user = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+
+      print("Respon user: ${user.uid}");
+    } catch (e) {
+      print("error: $e");
+    }
   }
 
   @override
@@ -46,7 +58,8 @@ class _RootPageState extends State<RootPage> {
               ),
               CustomButton(
                 sText: "Sign In",
-                callback: validateSave,
+                callback: validateAndSubmit,
+                // callback: validateSave,
               ),
             ],
           ),
