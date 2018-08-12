@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class CustomEditText extends StatelessWidget {
   final FormFieldSetter frmSaved;
@@ -53,14 +54,23 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: RaisedButton(
-        onPressed: callback,
-        color: cBackgroundColor,
-        child: Text(
-          sText,
-          style: TextStyle(color: cTextColor),
-        ),
-      ),
+      child: Theme.of(context).platform == TargetPlatform.iOS
+          ? CupertinoButton(
+              onPressed: callback,
+              color: cBackgroundColor,
+              child: Text(
+                sText,
+                style: TextStyle(color: cTextColor),
+              ),
+            )
+          : RaisedButton(
+              onPressed: callback,
+              color: cBackgroundColor,
+              child: Text(
+                sText,
+                style: TextStyle(color: cTextColor),
+              ),
+            ),
     );
   }
 }
