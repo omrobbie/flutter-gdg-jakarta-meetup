@@ -33,10 +33,11 @@ class _RootPageState extends State<RootPage> {
   void validateAndSubmit() async {
     if (validateSave()) {
       try {
-        String userId =
-            await widget.auth.signInWithEmailAndPassword(email, password);
         // FirebaseUser user = await FirebaseAuth.instance
         //     .signInWithEmailAndPassword(email: email, password: password);
+
+        String userId =
+            await widget.auth.signInWithEmailAndPassword(email, password);
 
         print("Respon user: $userId");
       } catch (e) {
@@ -121,10 +122,11 @@ class _RegistrasiState extends State<Registrasi> {
   void validateAndSubmit() async {
     if (validateSave()) {
       try {
-        String userId =
-            await widget.auth.createWithEmailAndPassword(email, password);
         // FirebaseUser user = await FirebaseAuth.instance
         //     .createUserWithEmailAndPassword(email: email, password: password);
+
+        String userId =
+            await widget.auth.createWithEmailAndPassword(email, password);
 
         print("Respon user: $userId");
       } catch (e) {
