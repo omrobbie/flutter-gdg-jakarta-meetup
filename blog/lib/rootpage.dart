@@ -78,7 +78,8 @@ class _RootPageState extends State<RootPage> {
                 child: Text("Don't have account? Register here.."),
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (BuildContext context) => new Registrasi()));
+                      builder: (BuildContext context) =>
+                          new Registrasi(auth: Auth())));
                 },
               ),
             ],
@@ -141,6 +142,7 @@ class _RegistrasiState extends State<Registrasi> {
       body: Container(
         padding: EdgeInsets.all(16.0),
         child: Form(
+          key: _formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
