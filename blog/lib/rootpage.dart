@@ -17,13 +17,13 @@ class _RootPageState extends State<RootPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            EditText(
+            CustomEditText(
               sLabel: "Email Address",
               sError: "Please fill your email address",
               inputType: TextInputType.emailAddress,
               frmSaved: (value) => email = value,
             ),
-            EditText(
+            CustomEditText(
               sLabel: "Password",
               sError: "Please fill your email address",
               inputType: TextInputType.text,

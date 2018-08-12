@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class EditText extends StatelessWidget {
+class CustomEditText extends StatelessWidget {
   final FormFieldSetter frmSaved;
   final bool bSecure;
   final String sLabel, sError;
   final TextInputType inputType;
 
-  EditText({
+  CustomEditText({
     this.sLabel,
     this.sError,
     this.frmSaved,
