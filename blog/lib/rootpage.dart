@@ -13,22 +13,7 @@ class _RootPageState extends State<RootPage> {
         padding: EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            TextFormField(
-              validator: (value) {
-                if (value.isEmpty) {
-                  return "Please fill your email address";
-                }
-              },
-              decoration: InputDecoration(
-                labelText: "Email Address",
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-              ),
-              keyboardType: TextInputType.emailAddress,
-            ),
-          ],
+          children: <Widget>[],
         ),
       ),
     );
