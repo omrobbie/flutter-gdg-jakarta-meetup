@@ -30,6 +30,9 @@ class _RootPageState extends State<RootPage> {
               bSecure: true,
               frmSaved: (value) => password = value,
             ),
+            CustomButton(
+              sText: "Sign In",
+            ),
           ],
         ),
       ),

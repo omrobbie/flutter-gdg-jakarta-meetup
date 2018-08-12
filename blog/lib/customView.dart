@@ -37,3 +37,30 @@ class EditText extends StatelessWidget {
     );
   }
 }
+
+class CustomButton extends StatelessWidget {
+  final String sText;
+  final Color cTextColor, cBackgroundColor;
+  final VoidCallback callback;
+
+  CustomButton({
+    this.sText,
+    this.cTextColor = Colors.white,
+    this.cBackgroundColor = Colors.blue,
+    this.callback,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: RaisedButton(
+        onPressed: callback,
+        color: cBackgroundColor,
+        child: Text(
+          sText,
+          style: TextStyle(color: cTextColor),
+        ),
+      ),
+    );
+  }
+}
