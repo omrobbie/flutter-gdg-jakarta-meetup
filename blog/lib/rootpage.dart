@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'customView.dart';
 
 class RootPage extends StatefulWidget {
   @override
@@ -13,7 +14,14 @@ class _RootPageState extends State<RootPage> {
         padding: EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[],
+          children: <Widget>[
+            EditText(
+              sLabel: "Email Address",
+              sError: "Please fill your email address",
+              inputType: TextInputType.emailAddress,
+              bSecure: true,
+            ),
+          ],
         ),
       ),
     );
