@@ -11,14 +11,15 @@ class _RootPageState extends State<RootPage> {
   final _formKey = GlobalKey<FormState>();
   String email, password;
 
-  void validateSave() {
+  bool validateSave() {
     final form = _formKey.currentState;
 
     if (form.validate()) {
       form.save();
+      return true;
+    } else {
+      return false;
     }
-
-    print("Email Address: $email, Password: $password");
   }
 
   void validateAndSubmit() async {
@@ -75,6 +76,31 @@ class _RegistrasiState extends StatefulWidget {
 }
 
 class __RegistrasiStateState extends State<_RegistrasiState> {
+  final _formKey = GlobalKey<FormState>();
+  String email, password;
+
+  bool validateSave() {
+    final form = _formKey.currentState;
+
+    if (form.validate()) {
+      form.save();
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  void validateAndSubmit() async {
+    try {
+      FirebaseUser user = await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(email: email, password: password);
+
+      print("Respon user: ${user.uid}");
+    } catch (e) {
+      print("error: $e");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,7 +111,33 @@ class __RegistrasiStateState extends State<_RegistrasiState> {
         padding: EdgeInsets.all(16.0),
         child: Form(
           child: Column(
-            children: <Widget>[],
+            children: <Widget>[
+              Padding(padding: EdgeInsets.only(top: 32.0)),
+              CustomEditText(
+                sLabel: "Email Address",
+                sError: "Please fill your email address",
+                inputType: TextInputType.emailAddress,
+                frmSaved: (value) => email = value,
+              ),
+              CustomEditText(
+                sLabel: "Password",
+                sError: "Please fill your email address",
+                inputType: TextInputType.text,
+                bSecure: true,
+                frmSaved: (value) => password = value,
+              ),
+              CustomButton(
+                sText: "Submit",
+                callback: validateAndSubmit,
+                // callback: validateSave,
+              ),
+              FlatButton(
+                child: Text("Already have account, click here.."),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ],
           ),
         ),
       ),
