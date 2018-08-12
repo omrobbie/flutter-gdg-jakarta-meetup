@@ -12,6 +12,12 @@ class MyHome extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Home Page"),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.lock_open),
+            onPressed: () {},
+          ),
+        ],
       ),
       body: Center(
         child: Text("Welcome"),
