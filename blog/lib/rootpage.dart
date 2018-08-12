@@ -10,6 +10,16 @@ class _RootPageState extends State<RootPage> {
   final _formKey = GlobalKey<FormState>();
   String email, password;
 
+  void validateSave() {
+    final form = _formKey.currentState;
+
+    if (form.validate()) {
+      form.save();
+    }
+
+    print("Email Address: $email, Password: $password");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +46,7 @@ class _RootPageState extends State<RootPage> {
               ),
               CustomButton(
                 sText: "Sign In",
-                callback: () {},
+                callback: validateSave,
               ),
             ],
           ),
