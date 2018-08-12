@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'customView.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'auth.dart';
 
 class RootPage extends StatefulWidget {
   @override
@@ -80,6 +81,14 @@ class _RootPageState extends State<RootPage> {
 }
 
 class Registrasi extends StatefulWidget {
+  final BaseAuth auth;
+  final VoidCallback callback;
+
+  Registrasi({
+    this.auth,
+    this.callback,
+  });
+
   @override
   _RegistrasiState createState() => new _RegistrasiState();
 }
@@ -102,8 +111,10 @@ class _RegistrasiState extends State<Registrasi> {
   void validateAndSubmit() async {
     if (validateSave()) {
       try {
-        FirebaseUser user = await FirebaseAuth.instance
-            .createUserWithEmailAndPassword(email: email, password: password);
+        String userId =
+            await widget.auth.createWithEmailAndPassword(email, password);
+        // FirebaseUser user = await FirebaseAuth.instance
+        //     .createUserWithEmailAndPassword(email: email, password: password);
 
         print("Respon user: ${user.uid}");
       } catch (e) {
