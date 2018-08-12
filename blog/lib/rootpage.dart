@@ -41,7 +41,7 @@ class _RootPageState extends State<RootPage> {
             await widget.auth.signInWithEmailAndPassword(email, password);
 
         Navigator.of(context).pushReplacement(new MaterialPageRoute(
-            builder: (BuildContext context) => new MyHome()));
+            builder: (BuildContext context) => new MyHome(auth: Auth())));
 
         print("Respon user: $userId");
       } catch (e) {

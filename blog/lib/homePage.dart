@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'auth.dart';
+import 'rootPage.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -21,6 +22,18 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyHomeState extends State<MyHome> {
+  void signOut() async {
+    try {
+      await widget.auth.signOut();
+      Navigator.of(context).pushReplacement(new MaterialPageRoute(
+          builder: (BuildContext context) => new RootPage(auth: Auth())));
+
+      print("signout success!");
+    } catch (e) {
+      print("error: $e");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +42,7 @@ class _MyHomeState extends State<MyHome> {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.lock_open),
-            onPressed: () {},
+            onPressed: signOut,
           ),
         ],
       ),
