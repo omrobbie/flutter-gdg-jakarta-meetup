@@ -64,6 +64,13 @@ class _RootPageState extends State<RootPage> {
                 callback: validateAndSubmit,
                 // callback: validateSave,
               ),
+              FlatButton(
+                child: Text("Don't have account? Register here.."),
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (BuildContext context) => new Registrasi()));
+                },
+              ),
             ],
           ),
         ),
@@ -72,12 +79,12 @@ class _RootPageState extends State<RootPage> {
   }
 }
 
-class _RegistrasiState extends StatefulWidget {
+class Registrasi extends StatefulWidget {
   @override
-  __RegistrasiStateState createState() => new __RegistrasiStateState();
+  _RegistrasiState createState() => new _RegistrasiState();
 }
 
-class __RegistrasiStateState extends State<_RegistrasiState> {
+class _RegistrasiState extends State<Registrasi> {
   final _formKey = GlobalKey<FormState>();
   String email, password;
 
@@ -113,8 +120,8 @@ class __RegistrasiStateState extends State<_RegistrasiState> {
         padding: EdgeInsets.all(16.0),
         child: Form(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Padding(padding: EdgeInsets.only(top: 32.0)),
               CustomEditText(
                 sLabel: "Email Address",
                 sError: "Please fill your email address",
