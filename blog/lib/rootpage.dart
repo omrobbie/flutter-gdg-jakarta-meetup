@@ -15,6 +15,11 @@ class _RootPageState extends State<RootPage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             TextFormField(
+              validator: (value) {
+                if (value.isEmpty) {
+                  return "Please fill your email address";
+                }
+              },
               decoration: InputDecoration(
                 labelText: "Email Address",
                 border: OutlineInputBorder(
