@@ -11,7 +11,7 @@ class EditText extends StatelessWidget {
     this.sError,
     this.frmSaved,
     this.inputType,
-    this.bSecure,
+    this.bSecure = false,
   });
 
   @override

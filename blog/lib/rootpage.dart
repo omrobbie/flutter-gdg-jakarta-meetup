@@ -7,6 +7,8 @@ class RootPage extends StatefulWidget {
 }
 
 class _RootPageState extends State<RootPage> {
+  String email, password;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +21,14 @@ class _RootPageState extends State<RootPage> {
               sLabel: "Email Address",
               sError: "Please fill your email address",
               inputType: TextInputType.emailAddress,
+              frmSaved: (value) => email = value,
+            ),
+            EditText(
+              sLabel: "Password",
+              sError: "Please fill your email address",
+              inputType: TextInputType.text,
               bSecure: true,
+              frmSaved: (value) => password = value,
             ),
           ],
         ),
