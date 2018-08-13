@@ -52,6 +52,9 @@ class _RootPageState extends State<RootPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Login"),
+      ),
       body: Container(
         padding: EdgeInsets.all(16.0),
         child: Form(
@@ -59,7 +62,6 @@ class _RootPageState extends State<RootPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Padding(padding: EdgeInsets.only(top: 32.0)),
               CustomEditText(
                 sLabel: "Email Address",
                 sError: "Please fill your email address",
