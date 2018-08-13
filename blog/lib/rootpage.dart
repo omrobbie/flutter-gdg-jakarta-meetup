@@ -40,10 +40,9 @@ class _RootPageState extends State<RootPage> {
         String userId =
             await widget.auth.signInWithEmailAndPassword(email, password);
 
+        print("Respon user: $userId");
         Navigator.of(context).pushReplacement(new MaterialPageRoute(
             builder: (BuildContext context) => new MyHome(auth: Auth())));
-
-        print("Respon user: $userId");
       } catch (e) {
         print("error: $e");
       }
@@ -82,7 +81,7 @@ class _RootPageState extends State<RootPage> {
               FlatButton(
                 child: Text("Don't have account? Register here.."),
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
                       builder: (BuildContext context) =>
                           new Registrasi(auth: Auth())));
                 },
@@ -133,6 +132,8 @@ class _RegistrasiState extends State<Registrasi> {
             await widget.auth.createWithEmailAndPassword(email, password);
 
         print("Respon user: $userId");
+        Navigator.of(context).pushReplacement(new MaterialPageRoute(
+            builder: (BuildContext context) => new MyHome(auth: Auth())));
       } catch (e) {
         print("error: $e");
       }
@@ -173,7 +174,9 @@ class _RegistrasiState extends State<Registrasi> {
               FlatButton(
                 child: Text("Already have account, click here.."),
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                      builder: (BuildContext context) =>
+                          new RootPage(auth: Auth())));
                 },
               ),
             ],

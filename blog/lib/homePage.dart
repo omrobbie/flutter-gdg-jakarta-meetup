@@ -25,10 +25,10 @@ class _MyHomeState extends State<MyHome> {
   void signOut() async {
     try {
       await widget.auth.signOut();
-      Navigator.of(context).pushReplacement(new MaterialPageRoute(
-          builder: (BuildContext context) => new RootPage(auth: Auth())));
 
       print("signout success!");
+      Navigator.of(context).pushReplacement(new MaterialPageRoute(
+          builder: (BuildContext context) => new RootPage(auth: Auth())));
     } catch (e) {
       print("error: $e");
     }
